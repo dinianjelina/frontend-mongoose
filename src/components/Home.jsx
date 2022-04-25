@@ -16,18 +16,18 @@ const Home = () => {
   }, [keyword]);
 
   const getProducts = async () => {
-    const res = await axios.get(`https://eduwork-backendmongo.herokuapp.com//api/v4/product`);
+    const res = await axios.get(`http://localhost:3000/api/v4/product`);
     setProducts(res.data);
   };
 
   const getProductsKeyword = async () => {
-    const res = await axios.get(`https://eduwork-backendmongo.herokuapp.com//api/v4/product?q=${keyword}`);
+    const res = await axios.get(`http://localhost:3000/api/v4/product?q=${keyword}`);
     setProducts(res.data);
   };
 
   const deleteProducts = async (id) => {
     try {
-      await axios.delete(`https://eduwork-backendmongo.herokuapp.com//api/v4/product/${id}`);
+      await axios.delete(`http://localhost:3000/api/v4/product/${id}`);
       getProducts();
     } catch (err) {
       console.log(err);

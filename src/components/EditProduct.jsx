@@ -15,7 +15,7 @@ const EditProduct = () => {
   }, []);
 
   const getProductsById = async () => {
-    const res = await axios.get(`https://eduwork-backendmongo.herokuapp.com//api/v4/product/${id}`);
+    const res = await axios.get(`http://localhost:3000/api/v4/product/${id}`);
     setName(res.data.name);
     setPrice(res.data.price);
     setStock(res.data.stock);
@@ -25,7 +25,7 @@ const EditProduct = () => {
   const updateProducts = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://eduwork-backendmongo.herokuapp.com//api/v4/product/${id}`, {
+      await axios.put(`http://localhost:3000/api/v4/product/${id}`, {
         name,
         price,
         stock,
