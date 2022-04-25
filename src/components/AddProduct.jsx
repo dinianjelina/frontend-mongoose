@@ -12,7 +12,7 @@ const AddProduct = () => {
   const postProducts = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/api/v4/product', {
+      await axios.post('https://eduwork-backendmongo.herokuapp.com/api/v4/product', {
         name,
         price,
         stock,
